@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "openai": "^4.20.0"
+    "openai": "^4.20.0",
+    "undici-types": "^5.27.2"
   }
 }
