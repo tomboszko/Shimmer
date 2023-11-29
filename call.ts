@@ -13,7 +13,7 @@ async function main() {
         const mp3 = await openai.audio.speech.create({
             model: "tts-1",
             voice: "shimmer",
-            input: "Today is a wonderful day to build something people love!",
+            input: "La calotte de ses morts!",
         });
         console.log(speechFile);
         const buffer = Buffer.from(await mp3.arrayBuffer());
