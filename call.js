@@ -39,18 +39,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
 var path = require("path");
 var openai_1 = require("openai");
-var openai = new openai_1.default();
+var openai = new openai_1.default({
+    apiKey: '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'
+});
 var speechFile = path.resolve("./speech.mp3");
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var mp3, buffer, _a, _b;
+        var mp3, buffer, _a, _b, error_1;
         return __generator(this, function (_c) {
             switch (_c.label) {
-                case 0: return [4 /*yield*/, openai.audio.speech.create({
-                        model: "tts-1",
-                        voice: "shimmer",
-                        input: "Today is a wonderful day to build something people love!",
-                    })];
+                case 0:
+                    _c.trys.push([0, 4, , 5]);
+                    return [4 /*yield*/, openai.audio.speech.create({
+                            model: "tts-1",
+                            voice: "shimmer",
+                            input: "Today is a wonderful day to build something people love!",
+                        })];
                 case 1:
                     mp3 = _c.sent();
                     console.log(speechFile);
@@ -61,7 +65,12 @@ function main() {
                     return [4 /*yield*/, fs.promises.writeFile(speechFile, buffer)];
                 case 3:
                     _c.sent();
-                    return [2 /*return*/];
+                    return [3 /*break*/, 5];
+                case 4:
+                    error_1 = _c.sent();
+                    console.error("An error occurred: ".concat(error_1.message));
+                    return [3 /*break*/, 5];
+                case 5: return [2 /*return*/];
             }
         });
     });
