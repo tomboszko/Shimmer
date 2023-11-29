@@ -40,7 +40,7 @@ var fs = require("fs");
 var path = require("path");
 var openai_1 = require("openai");
 var openai = new openai_1.default({
-    apiKey: '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'
+    apiKey: ''
 });
 var speechFile = path.resolve("./speech.mp3");
 function main() {
